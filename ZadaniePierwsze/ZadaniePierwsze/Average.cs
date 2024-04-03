@@ -10,9 +10,9 @@ public class MathHelper
         }
 
         int suma = 0;
-        foreach (int liczba in tablica)
+        foreach (int liczbaaa in tablica)
         {
-            suma += liczba;
+            suma += liczbaaa;
         }
 
         double srednia = (double)suma / tablica.Length;
