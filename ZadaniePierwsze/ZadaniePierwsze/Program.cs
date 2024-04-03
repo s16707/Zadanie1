@@ -1,24 +1,22 @@
-﻿public class MathHelper
+using System;
+
+public class MathHelper
 {
-    public static int ZnajdzMaksimum(int[] tablica)
+    public static double ObliczSrednia(int[] tablica)
     {
         if (tablica == null || tablica.Length == 0)
         {
             throw new ArgumentException("Tablica jest pusta lub niepoprawna.");
         }
 
-        int maksimum = tablica[0]; // Zakładamy, że pierwszy element jest maksimum
-
-        // Iterujemy przez pozostałe elementy i aktualizujemy maksimum, jeśli jest większe
-        for (int i = 1; i < tablica.Length; i++)
+        int suma = 0;
+        foreach (int liczba in tablica)
         {
-            if (tablica[i] > maksimum)
-            {
-                maksimum = tablica[i];
-            }
+            suma += liczba;
         }
 
-        return maksimum;
+        double srednia = (double)suma / tablica.Length;
+        return srednia;
     }
 }
 
@@ -26,8 +24,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        int[] tablicaLiczb = { 1, 5, 3, 8, 2 };
-        int maksimum = MathHelper.ZnajdzMaksimum(tablicaLiczb);
-        Console.WriteLine("Maksimum: " + maksimum);
+
+        int[] tablicaLiczb = { 1, 2, 3, 4, 5 };
+        double srednia = MathHelper.ObliczSrednia(tablicaLiczb);
+        Console.WriteLine("Średnia: " + srednia);
     }
 }
